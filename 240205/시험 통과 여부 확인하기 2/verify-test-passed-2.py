@@ -9,4 +9,4 @@ for _ in range(n):
         print('pass')
     else:
         print('fail')
-        print(passes)
+print(passes)
