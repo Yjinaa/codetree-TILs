@@ -6,7 +6,7 @@ for idx, elem in enumerate(ns):
         else:
             ns[idx]=(ns[idx]+3)
     else:
-        ns = ns[:-1]
+        ns = ns[:idx]
         break
 
 
