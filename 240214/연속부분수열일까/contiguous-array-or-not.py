@@ -9,14 +9,12 @@ for elem in a:
     if elem == b[0]:
         idxs.append(a.index(elem))
 
-try:
     # idx = a.index(b[0])
-    for idx in idxs:
-        if b == a[idx:idx+n2]:
-            print('Yes')
-            break
-        else:
-            continue
-    print('No')
-except:
-    print('No')
+for idx in idxs:
+    if b == a[idx:idx+n2]:
+        print('Yes')
+        exit()
+    else:
+        continue
+
+print('No')
