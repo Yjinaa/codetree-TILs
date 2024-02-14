@@ -12,7 +12,6 @@ for elem in a:
     # idx = a.index(b[0])
 for idx in idxs:
     if b == a[idx:idx+n2]:
-        print(idx)
         print('Yes')
         exit()
     else:
