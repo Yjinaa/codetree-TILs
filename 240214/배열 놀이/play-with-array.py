@@ -14,3 +14,4 @@ for i in range(q):
     elif qs[0] ==3:
         for i in range(qs[1], qs[2]+1):
             print(ns[i-1], end=" ")
+            continue
