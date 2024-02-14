@@ -12,5 +12,5 @@ for i in range(q):
         except:
             print(0)
     elif qs[0] ==3:
-        for i in range(qs[1]-1, qs[2]):
-            print(ns[i], end=" ")
+        for i in range(qs[1], qs[2]+1):
+            print(ns[i-1], end=" ")
