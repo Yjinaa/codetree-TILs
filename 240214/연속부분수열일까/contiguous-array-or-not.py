@@ -20,12 +20,11 @@ for elem in a:
 # print('No')
 
 cnt = 0
-print(idxs)
 for idx in idxs:
     if b == a[idx:idx+n2]:
         cnt += 1
-    else:
-        continue
+    # else:
+    #     continue
 
 if cnt > 0:
     print('Yes')
