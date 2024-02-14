@@ -11,7 +11,6 @@ for i in range(q):
             print(ns.index(qs[1]) + 1)
         except:
             print(0)
-    elif qs[0] ==3:
+    else:
         for i in range(qs[1], qs[2]+1):
             print(ns[i-1], end=" ")
-            continue
