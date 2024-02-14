@@ -10,11 +10,24 @@ for elem in a:
         idxs.append(a.index(elem))
 
     # idx = a.index(b[0])
+# for idx in idxs:
+#     if b == a[idx:idx+n2]:
+#         print('Yes')
+#         exit()
+#     else:
+#         continue
+
+# print('No')
+
+cnt = 0
+
 for idx in idxs:
     if b == a[idx:idx+n2]:
-        print('Yes')
-        exit()
+        cnt += 1
     else:
         continue
 
-print('No')
+if cnt > 0:
+    print('Yes')
+else:
+    print('No')
