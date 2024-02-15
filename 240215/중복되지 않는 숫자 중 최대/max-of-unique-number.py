@@ -21,8 +21,7 @@ else:
     for elem in arr:
         if elem > maxv:
             maxv = elem
-
-print(maxv)
+    print(maxv)
 
 # for elem in ns:
 #     print(elem)
