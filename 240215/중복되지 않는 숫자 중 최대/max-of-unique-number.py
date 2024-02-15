@@ -4,14 +4,16 @@ n = int(input())
 ns = list(map(int, input().split()))
 nss = ns[:]
 arr = []
+checked = []
 
 maxv = -sys.maxsize
 
 for elem in ns:
     nss.remove(elem)
-    if elem not in nss:
+    if elem not in nss and elem not in checked:
         arr.append(elem)
-        print(arr)
+    else:
+        checked.append(elem)
 
 if len(arr) == 0:
     print(-1)
