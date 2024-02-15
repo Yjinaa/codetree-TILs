@@ -11,6 +11,7 @@ for elem in ns:
     nss.remove(elem)
     if elem not in nss:
         arr.append(elem)
+        print(arr)
 
 if len(arr) == 0:
     print(-1)
