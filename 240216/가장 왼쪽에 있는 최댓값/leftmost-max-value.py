@@ -9,7 +9,7 @@ while maxv != ns[0]:
         if elem > maxv:
             maxv = elem
     maxes.append(ns.index(maxv)+1)
-    if len(ns) <= 2:
+    if len(ns[:ns.index(maxv)]) <= 1:
         print(*maxes)
     else:
         ns = ns[:ns.index(maxv)]
