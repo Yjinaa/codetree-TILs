@@ -8,7 +8,7 @@ for i in range(n-1):
         if ns[i] < ns[j]:
             price.append(ns[j]-ns[i])
 
-maxv = -sys.maxsize
+maxv = 0
 for elem in price:
     if elem > maxv:
         maxv = elem
