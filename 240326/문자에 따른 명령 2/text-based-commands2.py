@@ -13,6 +13,6 @@ for direction in directions:
     elif direction == 'R':
         dir_num = (dir_num+1)%4 # 3일 때 0이 되어야 함
     else:
-        nx, ny = x + dx[dir_num], y + dy[dir_num]
+        x, y = x + dx[dir_num], y + dy[dir_num]
 
-print(nx, ny)
+print(x, y)
