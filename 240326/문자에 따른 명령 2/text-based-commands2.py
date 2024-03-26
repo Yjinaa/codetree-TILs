@@ -1,4 +1,4 @@
-directions = list(input())
+directions = input()
 
 x, y = 0,0
 
