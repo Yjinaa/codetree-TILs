@@ -7,7 +7,7 @@ def in_range(x, y):
 dxs = [1,0,-1,0]
 dys = [0,1,0,-1]
 
-cnts = []
+max_cnt = 0
 
 for nx in range(n):
     for ny in range(n):
@@ -16,6 +16,7 @@ for nx in range(n):
             x, y = nx + dx, ny + dy
             if in_range(x,y) and a[x][y] == 1:
                cnt +=1
-        cnts.append(cnt)
+        if cnt > max_cnt:
+            max_cnt = cnt
 
-print(max(cnts))
+print(max_cnt)
