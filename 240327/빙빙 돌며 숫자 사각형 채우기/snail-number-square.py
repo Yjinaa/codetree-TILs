@@ -22,8 +22,9 @@ for i in range(2, n*m+1):
     else:
         direction = (direction + 1) % 4
         nx, ny = x + dx[direction], y + dy[direction]
-        x,y = nx,ny
-        visited[x][y] = i
+        if in_range(nx, ny) and visited[nx][ny] == 0:
+            x,y = nx,ny
+            visited[x][y] = i
 
 
 for _visited in visited:
