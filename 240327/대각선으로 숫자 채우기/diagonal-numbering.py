@@ -1,6 +1,6 @@
 n,m = map(int, input().split())
 
-num = 2
+num = 1
 
 # 0,0
 # 0,1   1,0
@@ -24,8 +24,7 @@ num = 2
 arr = [[0 for _ in range(m)] for _ in range(n)]
 
 
-for j in range(1,m): # 0,0
-    arr[0][0] = 1
+for j in range(m): # 0,0
     i=0
     while j != -1:
         arr[i][j] = num
