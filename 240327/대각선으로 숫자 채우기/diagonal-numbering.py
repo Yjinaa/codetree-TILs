@@ -26,7 +26,7 @@ arr = [[0 for _ in range(m)] for _ in range(n)]
 
 for j in range(m): # 0,0
     i=0
-    while j != -1:
+    while j != -1 and i < n:
         arr[i][j] = num
         i += 1
         j -= 1
