@@ -16,15 +16,10 @@ direction = 0
 
 for i in range(2, n*m+1):
     nx, ny = x + dx[direction], y + dy[direction]
-    if in_range(nx, ny) and visited[nx][ny] == 0:
-        x,y = nx,ny
-        visited[x][y] = i
-    else:
+    if not in_range(nx, ny) or visited[nx][ny] != 0:
         direction = (direction + 1) % 4
-        nx, ny = x + dx[direction], y + dy[direction]
-        if in_range(nx, ny) and visited[nx][ny] == 0:
-            x,y = nx,ny
-            visited[x][y] = i
+    x,y = x + dx[direction], y + dy[direction]
+    visited[x][y] = i
 
 
 for _visited in visited:
