@@ -15,9 +15,9 @@ public class Main {
             a[i] = sc.nextInt();
         }
         int ans = INT_MAX;
-        for(int i=0;i<5;i++){
+        for(int i=0;i<n;i++){
             int distance=0;
-            for(int j=0;j<5;j++){
+            for(int j=0;j<n;j++){
                 distance += a[j] * Math.abs(j-i);
             }
             if(distance<ans){
