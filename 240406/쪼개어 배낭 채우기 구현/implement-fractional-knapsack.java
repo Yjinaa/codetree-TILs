@@ -30,21 +30,35 @@ public class Main {
         double bag = 0.0;
         double price = 0.0;
 
+        // for(int i=0;i<n;i++){
+        //         bag += arr2d[i][0];
+        //         price += arr2d[i][1];
+        //         if(bag>m){
+        //             bag -= arr2d[i][0];
+        //             price -= arr2d[i][1];
+        //             double remain;
+        //             remain = m - bag;
+        //             bag += remain/arr2d[i][0];
+        //             price += (remain/arr2d[i][0])*arr2d[i][1];
+        //             break;
+        //     }
+
         for(int i=0;i<n;i++){
+            if((bag+arr2d[i][0])<=m){
                 bag += arr2d[i][0];
                 price += arr2d[i][1];
-                if(bag>m){
-                    bag -= arr2d[i][0];
-                    price -= arr2d[i][1];
-                    double remain;
-                    remain = m - bag;
-                    bag += remain/arr2d[i][0];
-                    price += (remain/arr2d[i][0])*arr2d[i][1];
-                    break;
             }
+            else{
+                double remain;
+                remain = m-bag;
+                bag += remain/arr2d[i][0];
+                price += (remain/arr2d[i][0])*arr2d[i][1];
+                break;
+            }
+        }
             
 
-        }
+        
         System.out.printf("%.3f",price);
 
     }
