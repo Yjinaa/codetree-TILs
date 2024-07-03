@@ -16,5 +16,4 @@ for i in range(m2):
     end += days[i]
 end += d2
 
-
-print(end - start -1)
+print(end - start +1)
