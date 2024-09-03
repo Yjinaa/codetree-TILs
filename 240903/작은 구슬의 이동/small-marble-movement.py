@@ -11,7 +11,7 @@ r, c = int(r), int(c)
 
 for i in range(t):
     nr, nc = r + dx[d], c + dy[d]
-    if 1 <= nr < n and 1 <= nc < n:
+    if 1 <= nr <= n and 1 <= nc <= n:
         r, c = nr, nc
     else:
         d = 3 - d
