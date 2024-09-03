@@ -13,17 +13,13 @@ x, y = 0, 0
 for i in range(2, n*m + 1):
     visited[x][y] = True
     nx, ny = x + dx[d], y + dy[d]
-    if 0 <= nx < n and 0 <= ny < m and visited[nx][ny] == False:
-        grid[nx][ny] = i
-        visited[nx][ny] = True
-        x, y = nx, ny
-    else:
+    if (not (0 <= nx < n and 0 <= ny < m)) or (visited[nx][ny] == True):
         d = (d + 1) % 4
         nx, ny = x + dx[d], y + dy[d]
-        grid[nx][ny] = i
-        visited[nx][ny] = True
-        x, y = nx, ny       
-            
+    grid[nx][ny] = i
+    visited[nx][ny] = True
+    x, y = nx, ny
+    
 for i in range(n):
     for j in range(m):
         print(grid[i][j], end=' ')
