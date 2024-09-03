@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 
 grid = [[0] * m for _ in range(n)]
-visited = [[False] * m for _ in range(m)]
+visited = [[False] * m for _ in range(n)]
 
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
