@@ -19,10 +19,10 @@ elif n+1 <= k <= 2*n:
     x, y = k-n-1, n-1
 elif 2*n+1 <= k <= 3*n:
     laser = 'N'
-    x, y = n-1, 3*n-k
+    x, y = n-1, n-(k-2*n)
 else:
     laser = 'E'
-    x, y = 4*n-k, 0
+    x, y = n-(k-3*n), 0
 
 def find_answer(x,y,laser):
     cnt = 0
