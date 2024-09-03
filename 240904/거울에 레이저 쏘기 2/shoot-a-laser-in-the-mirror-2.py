@@ -16,13 +16,13 @@ if 1 <= k <= n:
     x, y = 0, k-1
 elif n+1 <= k <= 2*n:
     laser = 'W'
-    x, y = (k-1)%n, n-1
+    x, y = k-n-1, n-1
 elif 2*n+1 <= k <= 3*n:
     laser = 'N'
-    x, y = n-1, k%n
+    x, y = n-1, 3*n-k
 else:
     laser = 'E'
-    x, y = k%n, 0
+    x, y = 4*n-k, 0
 
 def find_answer(x,y,laser):
     cnt = 0
