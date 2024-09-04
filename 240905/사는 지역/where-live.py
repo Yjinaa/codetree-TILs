@@ -18,5 +18,5 @@ for i, person in enumerate(people):
         target_idx = i 
 
 print(f'name {people[target_idx].name}')
-print(f'name {people[target_idx].code}')
-print(f'name {people[target_idx].location}')
+print(f'addr {people[target_idx].code}')
+print(f'city {people[target_idx].location}')
