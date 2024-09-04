@@ -17,6 +17,6 @@ for i, person in enumerate(people):
     if person.name > people[target_idx].name:
         target_idx = i 
 
-print(f'name {people[taget_idx].name}')
-print(f'name {people[taget_idx].code}')
-print(f'name {people[taget_idx].location}')
+print(f'name {people[target_idx].name}')
+print(f'name {people[target_idx].code}')
+print(f'name {people[target_idx].location}')
