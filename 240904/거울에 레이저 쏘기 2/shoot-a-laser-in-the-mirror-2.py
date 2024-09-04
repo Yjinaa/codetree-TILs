@@ -90,8 +90,7 @@ def find_answer(x,y,laser):
                 nx, ny = x + dx[d], y + dy[d]
                 if 0 <= nx < n and 0 <= ny < n:
                     cnt += 1
-                    x, y = nx, ny    
-                    print(f'new x,y:{x, y}')       
+                    x, y = nx, ny       
                     laser = 'S'                
                 else:                
                     return cnt + 1
