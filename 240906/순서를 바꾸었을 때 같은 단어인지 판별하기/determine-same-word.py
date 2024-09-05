@@ -1,8 +1,9 @@
+from collections import Counter
+
 a = input()
 b = input()
 
+ac = Counter(a)
+bc = Counter(b)
 
-if sorted(a) == sorted(b):
-    print('Yes')
-else:
-    print('No')
+print('Yes' if ac == bc else 'No')
