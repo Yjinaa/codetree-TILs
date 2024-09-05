@@ -2,16 +2,8 @@ n = int(input())
 
 ns = list(map(int, input().split()))
 
-arr = []
-ans = []
-
-for i, num in enumerate(ns):
-    arr.append(num)
-    if i == 0:
-        ans.append(num)
-
-    if i % 2 == 0 and i != 0:
-        idx = len(arr)//2
-        ans.append(sorted(arr)[idx])
-
-print(*ans)
+for i in range(n):
+    if i % 2 == 0:
+        arr = ns[:i+1]
+        mid = len(arr)//2
+        print(sorted(arr)[mid], end=" ")
