@@ -10,8 +10,8 @@ for i, num in enumerate(ns):
     if i == 0:
         ans.append(num)
 
-    if i % 2 != 0:
+    if i % 2 == 0 and i != 0:
         idx = len(arr)//2
-        ans.append(arr[idx])
+        ans.append(sorted(arr)[idx])
 
 print(*ans)
