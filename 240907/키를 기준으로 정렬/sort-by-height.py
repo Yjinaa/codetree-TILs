@@ -14,5 +14,5 @@ for i in range(n):
 
 users.sort(key=lambda x:x.height)
 
-for i in range(5):
+for i in range(n):
     print(f'{users[i].name} {users[i].height} {users[i].weight}')
