@@ -9,7 +9,7 @@ n = int(input())
 
 users = []
 for i in range(n):
-    n, h, w = input().split()
+    name, h, w = input().split()
     users.append(User(n, h, w))
 
 users.sort(key=lambda x:x.height)
