@@ -7,6 +7,10 @@ for i in range(n):
     row = list(map(int, input().split()))
     grid.append(row)
 
+if len(grid) == 1:
+    print(1)
+    exit()
+
 happy_r = 0
 for row in range(n):
     nums = 1
