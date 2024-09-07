@@ -34,13 +34,13 @@ def calculate_sum(block_shape, row, col):
 block_shape = 'L'
 max_val = 0
 for row in range(n):
-    for col in range(n):
+    for col in range(m):
         cal_val = calculate_sum(block_shape, row, col)
         max_val = max(max_val, cal_val)
 
 block_shape = 'else'
 for row in range(n):
-    for col in range(n):
+    for col in range(m):
         cal_val = calculate_sum(block_shape, row, col)
         max_val = max(max_val, cal_val)
 
