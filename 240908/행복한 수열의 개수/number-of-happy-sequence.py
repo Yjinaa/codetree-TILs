@@ -13,10 +13,11 @@ for row in range(n):
     for col in range(0, n-1):
         if grid[row][col] == grid[row][col+1]:
             nums += 1
-            if nums >= m:
-                happy_r += 1
         else:
             nums = 1
+        if nums >= m:
+            happy_r += 1
+            break
 
 happy_c = 0
 for col in range(n):
@@ -24,10 +25,10 @@ for col in range(n):
     for row in range(0,n-1):
         if grid[row][col] == grid[row+1][col]:
             nums += 1
-            if nums >= m:
-                happy_c += 1
-                break
         else:
             nums = 1
+        if nums >= m:
+            happy_c += 1
+            break
 
 print(happy_c + happy_r)
