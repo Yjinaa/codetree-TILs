@@ -12,8 +12,8 @@ def is_happy_sequence(seq):
         else:
             consecutive_count = 1
         max_cnt = max(max_cnt, consecutive_count)
-        if max_cnt >= m:
-            return True 
+    if max_cnt >= m:
+        return True 
 
 num_happy = 0
 for i in range(n):
