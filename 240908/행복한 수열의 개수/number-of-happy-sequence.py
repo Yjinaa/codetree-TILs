@@ -8,7 +8,7 @@ for i in range(n):
     grid.append(row)
 
 if len(grid) == 1:
-    print(1)
+    print(2)
     exit()
 
 happy_r = 0
