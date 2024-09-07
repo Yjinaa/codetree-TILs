@@ -1,38 +1,29 @@
-from collections import Counter
-from collections import defaultdict
+n,m = map(int, input().split())
 
-n, m = map(int, input().split())
-grid = []
+grid = [list(map(int, input().split())) for _ in range(n)]
+
+seq = [0 for _ in range(n)]
+
+def is_happy_sequence(seq):
+    consecutive_count = 1
+    for i in range(1, n):
+        if seq[i-1] == seq[i]:
+            consecutive_count += 1
+        else:
+            consecutive_count = 1
+        if consecutive_count >= m:
+            return True 
+
+num_happy = 0
 for i in range(n):
-    row = list(map(int, input().split()))
-    grid.append(row)
+    seq = grid[i][:]
+    if is_happy_sequence(seq):
+        num_happy += 1
 
-if len(grid) == 1:
-    print(2)
-    exit()
-
-happy_r = 0
-for row in range(n):
-    nums = 1
-    for col in range(0, n-1):
-        if grid[row][col] == grid[row][col+1]:
-            nums += 1
-        else:
-            nums = 1
-        if nums >= m:
-            happy_r += 1
-            break
-
-happy_c = 0
 for col in range(n):
-    nums = 1
-    for row in range(0,n-1):
-        if grid[row][col] == grid[row+1][col]:
-            nums += 1
-        else:
-            nums = 1
-        if nums >= m:
-            happy_c += 1
-            break
+    for row in range(n):
+        seq[row] = grid[row][col]
+    if is_happy_sequence(seq):
+        num_happy += 1
 
-print(happy_c + happy_r)
+print(num_happy)
