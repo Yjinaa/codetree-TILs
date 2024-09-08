@@ -41,7 +41,7 @@ for k in range((n+1)//2+1):
       for row in range(n):
             for col in range(n):
                   gold_cnt = get_gold(row, col, get_k(k))
-                  cost = get_expenditure(1)
+                  cost = get_expenditure(k)
                   final_benefit = gold_cnt*m - cost
                   if final_benefit > 0:
                         max_gold_cnt = max(gold_cnt, max_gold_cnt)
