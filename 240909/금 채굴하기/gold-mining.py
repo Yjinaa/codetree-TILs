@@ -9,15 +9,16 @@ n_grid.append([[0]*(len(grid[0])+2)])
 def get_expenditure(k):
     return k*k + (k+1)*(k+1)
 
-k1 = [[0,1,0],
-      [1,1,1],
-      [0,1,0]]
+def get_k(k):
+      size = 2*k+1
+      k_grid = [[0]*(size) for _ in range(size)]
+      center = k
 
-k2 = [[0,0,1,0,0],
-      [0,1,1,1,0],
-      [1,1,1,1,1],
-      [0,1,1,1,0],
-      [0,0,1,0,0]]
+      for i in range(size):
+            for j in range(size):
+                  if abs(center-i) + abs(center-j) <= k:
+                        k_grid[i][j] = 1
+      return k_grid
 
 def get_gold(x,y,k):
       gold_cnt = 0
@@ -35,21 +36,15 @@ def get_gold(x,y,k):
 import sys
 max_benefit = -sys.maxsize
 max_gold_cnt = 0
-for row in range(n):
-      for col in range(n):
-            gold_cnt = get_gold(row, col, k1)
-            cost = get_expenditure(1)
-            final_benefit = gold_cnt*m - cost
-            if final_benefit > 0:
-                  max_gold_cnt = max(gold_cnt, max_gold_cnt)
-            
 
-for row in range(n):
-      for col in range(n):
-            gold_cnt = get_gold(row, col, k2)
-            cost = get_expenditure(2)
-            final_benefit = gold_cnt*m - cost
-            if final_benefit > 0:
-                  max_gold_cnt = max(gold_cnt, max_gold_cnt)      
+for k in range((n+1)//2+1):
+      for row in range(n):
+            for col in range(n):
+                  gold_cnt = get_gold(row, col, get_k(k))
+                  cost = get_expenditure(1)
+                  final_benefit = gold_cnt*m - cost
+                  if final_benefit > 0:
+                        max_gold_cnt = max(gold_cnt, max_gold_cnt)
+                  
 
 print(max_gold_cnt)
