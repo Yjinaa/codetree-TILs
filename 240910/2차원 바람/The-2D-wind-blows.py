@@ -56,5 +56,6 @@ def simulate(q):
         put_avg(r1, c1, r2, c2, shifted_grid)
     for row in grid:
         print(*row)
+    return
 
 simulate(q)
