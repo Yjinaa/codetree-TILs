@@ -54,6 +54,8 @@ for nth in range(q):
             elif swell == 'l':
                 shift_right(grid, i-1)
                 swell = 'r'
+        else:
+            break
     swell = 'r' if d == 'L' else 'l'
     for i in range(r, n-1): # lower bound
         if has_common_elements(grid[i], grid[i+1]):
@@ -63,6 +65,8 @@ for nth in range(q):
             elif swell == 'l':
                 shift_right(grid, i+1)
                 swell = 'r'
+        else:
+            break
 
 for row in grid:
     print(*row)
