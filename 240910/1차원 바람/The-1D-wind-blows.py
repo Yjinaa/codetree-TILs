@@ -5,6 +5,11 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 r, d = input().split()
 r = int(r) - 1 # 1 <= r이므로 index로 교체
 
+if q == 0:
+    for row in grid:
+        print(*row)
+        exit()
+
 def shift_left(grid, r):
     # r번째 행을 왼쪽으로 shift
     temp = grid[r][0]
