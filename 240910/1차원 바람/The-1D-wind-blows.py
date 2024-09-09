@@ -41,11 +41,9 @@ for nth in range(q):
     swell = -1
     if d == 'L': # 처음 바람 방향이 L일 경우
         shift_right(grid, r)
-        swell_first = 'r'
         swell = 'r'
     elif d == 'R': # 처음 바람 방향이 R일 경우
         shift_left(grid, r)
-        swell_first = 'l'
         swell = 'l'
     # 여파 계산
     for i in range(r,0,-1): # upper bound
@@ -56,7 +54,7 @@ for nth in range(q):
             elif swell == 'l':
                 shift_right(grid, i-1)
                 swell = 'r'
-    swell = swell_first
+    swell = 'r' if d == 'L' else 'l'
     for i in range(r, n-1): # lower bound
         if has_common_elements(grid[i], grid[i+1]):
             if swell == 'r':
