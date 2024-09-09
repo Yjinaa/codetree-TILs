@@ -44,18 +44,18 @@ def shift(r1,c1,r2,c2):
     return shifted_grid
 
 def simulate(q):
-    r1, c1, r2, c2 = map(int, input().split())
-    # 인덱스 범위로 교체
-    r1, c1, r2, c2 = r1-1, c1-1, r2-1, c2-1
     if q == 0:
         for row in grid:
             print(*row)
         return
     for i in range(q):
+        r1, c1, r2, c2 = map(int, input().split())
+        # 인덱스 범위로 교체
+        r1, c1, r2, c2 = r1-1, c1-1, r2-1, c2-1
         shifted_grid = shift(r1, c1, r2, c2)
         put_avg(r1, c1, r2, c2, shifted_grid)
+
     for row in grid:
         print(*row)
-    return
 
 simulate(q)
