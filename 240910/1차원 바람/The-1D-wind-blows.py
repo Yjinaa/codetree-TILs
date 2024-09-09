@@ -7,9 +7,6 @@ if q == 0:
         print(*row)
         exit()
 
-r, d = input().split()
-r = int(r) - 1 # 1 <= r이므로 index로 교체
-
 def shift_left(grid, r):
     # r번째 행을 왼쪽으로 shift
     temp = grid[r][0]
@@ -39,6 +36,8 @@ def has_common_elements(list1, list2):
 
 
 for nth in range(q):
+    r, d = input().split()
+    r = int(r) - 1 # 1 <= r이므로 index로 교체
     swell = -1
     if d == 'L': # 처음 바람 방향이 L일 경우
         shift_right(grid, r)
