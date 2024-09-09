@@ -2,13 +2,13 @@ n, m, q = map(int, input().split())
 
 grid = [list(map(int, input().split())) for _ in range(n)]
 
-r, d = input().split()
-r = int(r) - 1 # 1 <= r이므로 index로 교체
-
 if q == 0:
     for row in grid:
         print(*row)
         exit()
+
+r, d = input().split()
+r = int(r) - 1 # 1 <= r이므로 index로 교체
 
 def shift_left(grid, r):
     # r번째 행을 왼쪽으로 shift
