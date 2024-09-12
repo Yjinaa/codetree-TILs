@@ -36,9 +36,12 @@ while i < len(b)-1:
             b = temp[:]
             temp = []
             i = 0
-    
 
-if len(temp) == 0:
+if n < m:
+    print(len(b))
+    for elem in b:
+        print(elem)
+elif len(temp) == 0:
     print(0)
 else:
     print(len(temp))
