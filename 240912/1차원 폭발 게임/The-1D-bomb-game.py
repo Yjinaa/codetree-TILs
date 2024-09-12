@@ -25,7 +25,7 @@ while i < len(b)-1:
     if len(temp2) < m:
         temp.extend(temp2)
     else:
-        i-len(temp2)-1
+        i = i-len(temp2)-1
     i += 1
 
 if i == len(b)-1 and b[-1] != b[-2]:
