@@ -14,6 +14,7 @@ num_cnt = 1
 #         temp[temp_idx] = b[i]
 #         temp_idx += 1
 
+
 i = 0
 while i < len(b)-1:
     temp2 = [b[i]]
@@ -23,6 +24,8 @@ while i < len(b)-1:
             i += 1
     if len(temp2) < m:
         temp.extend(temp2)
+    else:
+        i-len(temp2)-1
     i += 1
 
 if i == len(b)-1 and b[-1] != b[-2]:
