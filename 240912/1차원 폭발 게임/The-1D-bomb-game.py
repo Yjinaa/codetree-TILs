@@ -16,14 +16,17 @@ num_cnt = 1
 
 i = 0
 while i < len(b)-1:
-    num_cnt = 1
+    temp2 = [b[i]]
     if b[i] == b[i+1]:
         while i < len(b)-1 and b[i] == b[i+1]:
-            num_cnt += 1
+            temp2.append(b[i+1])
             i += 1
-    if num_cnt < m:
-        temp.append(b[i])
+    if len(temp2) < m:
+        temp.extend(temp2)
     i += 1
+
+if i == len(b)-1 and b[-1] != b[-2]:
+    temp.append(b[-1])
 
 if len(temp) == 0:
     print(0)
