@@ -9,8 +9,11 @@ def simulate():
         for row in range(n):
             for col in range(k, k+m):
                 # print(f'grid[{row}][{col}] = {grid[row][col]}')
-                if grid[row][col] == 0:
+                if grid[row][col] == 0 and row != n-1:
                     continue
+                elif row == n-1:
+                    grid[row][k:k+m] = [1] * m
+                    return grid
                 else:
                     grid[row-1][k:k+m] = [1] * m
                     return grid
