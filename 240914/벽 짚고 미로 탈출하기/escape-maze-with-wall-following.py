@@ -3,7 +3,7 @@ x, y = map(int, input().split())
 x, y = x-1, y-1
 
 grid = [list(input()) for _ in range(n)]
-visited = [[False]*n for _ in range(n)]
+visited = []
 
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
@@ -38,6 +38,7 @@ def go_avilable(d, x, y):
 def simulate(d, x, y):
     t = 0
     while True:
+        visited.append((d, x, y))
         if is_wall(d, x, y): # 오른쪽에 벽이 있을 때
             available = go_avilable(d, x, y)
             if not available: # 바라보고 있는 방향, 이동 불가능 할 때
@@ -51,6 +52,8 @@ def simulate(d, x, y):
                 x, y = nx, ny
                 t += 1
                 # print(nx, ny, d)
+                if (d, x, y) in visited:
+                    return -1
         else: # 오른쪽에 벽이 없을 때
             d = (d+1)%4
             nx, ny = x+dx[d], y+dy[d]
