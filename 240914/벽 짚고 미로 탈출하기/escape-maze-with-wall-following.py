@@ -38,7 +38,7 @@ def go_avilable(d, x, y):
 def move_available(x, y):
     for i in range(4):
         nx, ny = x +dx[i], y + dy[i]
-        if 0 <= nx < n and 0 <= ny < n and grid[nx][ny] == '.':
+        if grid[nx][ny] == '.':
             return True
     return False
 
