@@ -61,6 +61,8 @@ def simulate(d, x, y):
                 x, y = nx, ny
                 t += 1
                 # print(nx, ny, d)
+                if (d, x, y) in visited:
+                    return -1
         else: # 오른쪽에 벽이 없을 때
             d = (d+1)%4
             nx, ny = x+dx[d], y+dy[d]
