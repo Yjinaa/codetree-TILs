@@ -47,8 +47,6 @@ def simulate(d, x, y):
     while True:
         if move_available(x,y) == False:
             return -1
-        if (d, x, y) in visited:
-            return -1
         visited.add((d, x, y))
         if is_wall(d, x, y): # 오른쪽에 벽이 있을 때
             available = go_avilable(d, x, y)
