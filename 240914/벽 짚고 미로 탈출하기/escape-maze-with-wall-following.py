@@ -38,14 +38,14 @@ def go_avilable(d, x, y):
 def move_available(x, y):
     for i in range(4):
         nx, ny = x +dx[i], y + dy[i]
-        if grid[nx][ny] == '.':
-            break
-    return True
+        if 0 <= nx < n and 0 <= ny < n and grid[nx][ny] == '.':
+            return True
+    return False
 
 def simulate(d, x, y):
     t = 0
     while True:
-        if not move_available(x,y):
+        if move_available(x,y)==False:
             return -1
         visited.add((d, x, y))
         if is_wall(d, x, y): # 오른쪽에 벽이 있을 때
