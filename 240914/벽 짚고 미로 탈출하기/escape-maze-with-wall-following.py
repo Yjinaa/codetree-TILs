@@ -3,6 +3,7 @@ x, y = map(int, input().split())
 x, y = x-1, y-1
 
 grid = [list(input()) for _ in range(n)]
+visited = [[False]*n for _ in range(n)]
 
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
@@ -41,16 +42,21 @@ def simulate(d, x, y):
             available = go_avilable(d, x, y)
             if not available: # 바라보고 있는 방향, 이동 불가능 할 때
                 d = (d+3)%4
-                # print(d)
+                # print(x,y,d)
+            elif available == 'OOG Available': # 바라보고 있는 방향, 탈출 가능 할 때
+                # print('OOG available')
+                break
             elif available==True: # 바라보고 있는 방향, 이동 가능 할 때
                 nx, ny = x+dx[d], y+dy[d]
                 x, y = nx, ny
                 t += 1
-            elif available == 'OOG Available': # 바라보고 있는 방향, 탈출 가능 할 때
-                # print('OOG available')
-                break
+                # print(nx, ny, d)
         else: # 오른쪽에 벽이 없을 때
             d = (d+1)%4
+            nx, ny = x+dx[d], y+dy[d]
+            x, y = nx, ny
+            t += 1
+            # print(x,y,d,'else')
     return t+1
 
 t = simulate(d, x, y)
