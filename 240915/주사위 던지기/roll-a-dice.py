@@ -13,7 +13,9 @@ def move(x, y, direction):
     nx, ny = x + dx[direction], y + dy[direction]
     if 0 <= nx < n and 0 <= ny < n:
         x, y = nx, ny
-    return x, y
+        return x, y, True
+    else:
+        return x, y, False
 
 def change_dice(up, front, right, direction):
     if direction == 2:
@@ -28,8 +30,9 @@ def change_dice(up, front, right, direction):
 def simulate(x, y, dirs, up, front, right):
     for i in range(len(dirs)):
         direction = DIR_MAP[dirs[i]]
-        x, y = move(x, y, direction)
-        up, front, right = change_dice(up, front, right, direction)
+        x, y, moved = move(x, y, direction)
+        if moved:
+            up, front, right = change_dice(up, front, right, direction)
         bottom = 7-up
         grid[x][y] = bottom
 
