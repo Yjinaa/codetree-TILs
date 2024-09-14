@@ -16,7 +16,7 @@ def search_and_put_bomb(grid, t):# 격자판을 돌며 폭탄이 있는지 판�
                 temp[i][j] = 1
                 distance = 2**(t-1)
                 for k in range(4):
-                    nx, ny = x + distance*dx[k], y + distance*dy[k]
+                    nx, ny = i + distance*dx[k], j + distance*dy[k]
                     if 0 <= nx < n and 0 <= ny < n:
                         temp[nx][ny] = 1
     return temp
