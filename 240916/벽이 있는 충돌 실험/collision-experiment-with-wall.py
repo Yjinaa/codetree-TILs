@@ -39,7 +39,7 @@ for i in range(T):
     switched_num = 0
     while True:
         # print(switched_num)
-        if switched_num >= 2*n+2:
+        if switched_num >= n+1:
             break
         switched_grid = [[[0,-1] for _ in range(n)] for _ in range(n)]
         switched_dirs = [[0]*n for _ in range(n)]
