@@ -11,7 +11,6 @@ def is_beautiful(arr):
             return False
     start_idx = 0
     for end_idx in range(1,len(arr)):
-        print(end_idx)
         if arr[end_idx] != arr[start_idx]:
             if arr[end_idx-1] != len(arr[start_idx:end_idx]):
                 return False
