@@ -1,3 +1,5 @@
+### 만일 다 옮기고 주변이 전부 빈 리스트일때 고려하는거 빼먹음
+
 dx = [0,1,1,1,0,-1,-1,-1]
 dy = [1,1,0,-1,-1,-1,0,1]
 
@@ -27,6 +29,7 @@ def search_target(target):
 
 def move_target(x,y,idx):
     max_val = 0
+    not_available = 0
     for direction in range(8):
         nx,ny = x + dx[direction], y + dy[direction]
         # print(f'[{nx}][{ny}]')
@@ -36,6 +39,10 @@ def move_target(x,y,idx):
                     max_val = elem
                     mx,my = nx,ny
                     # print(f'max_val={max_val}, grid[{mx}][{my}]')
+        else:
+            not_available += 1
+    if not_available == 8:
+        return 
     target_list = cur_grid[x][y][idx:]
     cur_grid[x][y] = cur_grid[x][y][:idx]
     # print(cur_grid[x][y], target_list)
