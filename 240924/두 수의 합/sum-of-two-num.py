@@ -4,7 +4,7 @@ n, k = map(int, input().split())
 
 cnt = 0
 nums = list(map(int, input().split()))
-complements = defaultdict(list)
+complements = defaultdict(int)
 for i,num in enumerate(nums):
     complement = k-num
     if complement in complements:
