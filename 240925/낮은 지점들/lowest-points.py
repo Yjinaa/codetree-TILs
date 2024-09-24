@@ -6,12 +6,13 @@ d = defaultdict(list)
 
 for i in range(n):
     x, y = map(int, input().split())
-    d[x].append(y)
+    if x not in d:
+        d[x] = y
+    else:
+        d[x] = min(y, d[x])
 
-ans = 0
-for point in d:
-    if len(d[point]) != 1:
-        d[point] = [min(d[point])]
-    ans += d[point][0]
+sum_val = 0
+for val in d.values():
+    sum_val += val
 
-print(ans)
+print(sum_val)
