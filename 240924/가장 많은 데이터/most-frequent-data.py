@@ -1,12 +1,10 @@
-from collections import defaultdict
+from collections import Counter
 n = int(input())
-d = defaultdict(int)
+
+words = []
 for i in range(n):
     word = input()
-    d[word] += 1
+    words.append(word)
 
-max_val = 0
-for key in d:
-    max_val = max(d[key], max_val)
-
-print(max_val)
+c = Counter(words)
+print(c.most_common(1)[0][1])
