@@ -8,7 +8,7 @@ complements = defaultdict(list)
 for i,num in enumerate(nums):
     complement = k-num
     if complement in complements:
-        cnt += len(complements[complement])
-    complements[num].append(i)
+        cnt += complements[complement]
+    complements[num] += 1
 
 print(cnt)
