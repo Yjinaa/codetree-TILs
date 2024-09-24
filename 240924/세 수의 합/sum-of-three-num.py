@@ -11,16 +11,10 @@ nums = sorted(list(map(int, input().split())))
 cnt = 0
 
 for i in range(n):
-    left = i+1
-    right = len(nums)-1
-    while left < right:
-        target = nums[i] + nums[left] + nums[right]
-        if target == k:
-            cnt += 1
-            left += 1
-        elif target > k:
-            right -= 1
-        elif target < k:
-            left += 1
-    
+    for left in range(i + 1, n):  # i 다음 인덱스부터 시작
+        for right in range(left + 1, n):  # left 다음 인덱스부터 시작
+            target = nums[i] + nums[left] + nums[right]
+            if target == k:
+                cnt += 1
+
 print(cnt)
