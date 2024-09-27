@@ -4,7 +4,6 @@ n, k = map(int, input().split())
 
 grid = [list(map(int, input().split())) for _ in range(n)]
 visited = [[False]*n for _ in range(n)]
-check_board = [[0]*n for _ in range(n)]
 
 dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
@@ -26,9 +25,8 @@ total_paths = 0
 for _ in range(k):
     x, y = map(int, input().split())
     x, y = x-1, y-1
-    check_board[x][y] = 1
     queue = deque([(x,y)])
     available_paths = bfs()
     total_paths += available_paths
 
-print(sum(sum(row) for row in check_board))
+print(sum(sum(row) for row in visited))
