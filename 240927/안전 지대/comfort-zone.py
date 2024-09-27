@@ -34,7 +34,6 @@ while True:
     for i in range(n):
         for j in range(m):
             if not visited[i][j] and grid2[i][j] == 0:
-                visited[i][j] = True
                 dfs(i,j)
                 regions += 1
     if regions > max_regions:
