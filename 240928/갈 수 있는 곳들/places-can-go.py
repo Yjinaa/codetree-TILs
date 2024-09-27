@@ -9,7 +9,6 @@ dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
 
 def bfs():
-    available_paths = 1
     while queue:
         cx, cy = queue.popleft()
         for dx, dy in zip(dxs, dys):
