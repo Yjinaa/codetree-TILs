@@ -7,7 +7,6 @@ dxs = [1,0]
 dys = [0,1]
 
 def dfs(x,y):
-    visited[x][y] = 1
     for dx, dy in zip(dxs, dys):
         nx, ny = x + dx, y+dy
 
