@@ -12,7 +12,7 @@ ans = 0
 
 for i in range(g):
     nums = list(map(int, input().split()))[1:]
-    for nun in nums:
+    for num in nums:
         num -= 1
         groups[i].add(num)
         people_groups[num].append(i) # 각 사람이 어떤 그룹에 들어가있는지
