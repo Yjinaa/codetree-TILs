@@ -27,6 +27,8 @@ while True:
                 grid2[i][j] = 1
                 flooded += 1
     if flooded == n*m:
+        if max_regions == 0:
+            mak_k = k
         break
 
     regions = 0
