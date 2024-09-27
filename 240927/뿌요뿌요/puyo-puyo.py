@@ -28,5 +28,7 @@ for i in range(n):
                 total_block_nums.append(blocks)
             else:
                 continue
-
-print(block_region, max(total_block_nums))
+if len(total_block_nums) == 0:
+    print(block_region, 0)
+else:
+    print(block_region, max(total_block_nums))
