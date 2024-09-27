@@ -17,7 +17,7 @@ for i in range(g):
         groups[i].add(num)
         people_groups[num].append(i) # 각 사람이 어떤 그룹에 들어가있는지
 
-q.append(0)
+queue.append(0)
 invited[0] = True
 
 while queue:
