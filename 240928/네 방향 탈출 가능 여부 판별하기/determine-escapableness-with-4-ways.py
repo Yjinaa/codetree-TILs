@@ -7,7 +7,7 @@ visited = [[0]*m for _ in range(n)]
 dxs = [0,1,0,-1]
 dys = [1,0,-1,0]
 
-def bfs(x,y):
+def bfs():
     while queue:
         cx, cy = queue.popleft()
         for dx, dy in zip(dxs, dys):
@@ -17,5 +17,5 @@ def bfs(x,y):
                 visited[nx][ny] = 1
 
 queue = deque([(0,0)])
-bfs(0,0)
+bfs()
 print(visited[n-1][m-1])
