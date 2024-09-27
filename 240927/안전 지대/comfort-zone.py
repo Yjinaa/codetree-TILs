@@ -29,7 +29,7 @@ while True:
     if flooded == n*m:
         if max_regions == 0:
             print(k)
-            mak_k = k
+            max_k = k
             print(max_k)
         break
 
