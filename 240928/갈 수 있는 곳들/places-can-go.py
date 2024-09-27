@@ -17,15 +17,12 @@ def bfs():
             if 0 <= nx < n and 0 <= ny < n and visited[nx][ny] != True and grid[nx][ny] != 1:
                 queue.append((nx,ny))
                 visited[nx][ny] = True
-                available_paths += 1
-    return available_paths
 
 for _ in range(k):
     x, y = map(int, input().split())
     x, y = x-1, y-1
     queue = deque([(x,y)])
     visited[x][y] = True
-    available_paths = bfs()
-    total_paths += available_paths
+    bfs()
 
 print(sum(sum(row) for row in visited))
