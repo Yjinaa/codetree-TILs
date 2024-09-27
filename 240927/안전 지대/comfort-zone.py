@@ -30,6 +30,7 @@ while True:
         if max_regions == 0:
             print(k)
             mak_k = k
+            print(max_k)
         break
 
     regions = 0
