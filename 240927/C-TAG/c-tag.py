@@ -10,12 +10,17 @@ for i in range(m):
         for k in range(j+1,m):
             a_codes = set()
             b_codes = set()
+            is_separable = True
             for code in range(n):
                 a_code = a[code][i]+a[code][j]+a[code][k]
                 b_code = b[code][i]+b[code][j]+b[code][k]
                 a_codes.add(a_code)
                 b_codes.add(b_code)
-            if len(a_codes.intersection(b_codes)) == 0:
+                
+                if len(a_codes.intersection(b_codes)) != 0:
+                    is_separable = False
+                    break
+            if is_separable == True:
                 ans += 1
 
 print(ans)
