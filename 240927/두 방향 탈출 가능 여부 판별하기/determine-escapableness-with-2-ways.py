@@ -16,4 +16,4 @@ def dfs(x,y):
 
 visited[0][0] = 1
 dfs(0,0)
-pirnt(visited[n-1][m-1])
+print(visited[n-1][m-1])
