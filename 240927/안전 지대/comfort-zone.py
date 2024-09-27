@@ -10,10 +10,10 @@ dxs = [0,1,0,-1]
 dys = [1,0,-1,0]
 
 def dfs(x,y):
+    visited[x][y] = True
     for dx, dy in zip(dxs, dys):
         nx, ny = x + dx, y + dy
         if 0 <= nx < n and 0 <= ny < m and visited[nx][ny] != True and grid2[nx][ny] != 1:
-            visited[nx][ny] = True
             dfs(nx,ny)
 
 while True:
