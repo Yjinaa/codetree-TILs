@@ -2,7 +2,7 @@ from collections import deque
 n,m = map(int, input().split())
 
 grid = [list(map(int, input().split())) for _ in range(n)]
-visited = [[0]*n for _ in range(n)]
+visited = [[0]*m for _ in range(n)]
 
 dxs = [0,1,0,-1]
 dys = [1,0,-1,0]
