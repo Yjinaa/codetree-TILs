@@ -13,9 +13,10 @@ for i in range(m):
             is_separable = True
             for code in range(n):
                 a_code = a[code][i]+a[code][j]+a[code][k]
-                b_code = b[code][i]+b[code][j]+b[code][k]
                 a_codes.add(a_code)
-                b_codes.add(b_code)
+            
+            for code in range(n):
+                b_code = b[code][i]+b[code][j]+b[code][k]
                 
                 if b_code in a_codes:
                     is_separable = False
