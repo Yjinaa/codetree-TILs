@@ -17,7 +17,7 @@ for i in range(m):
                 a_codes.add(a_code)
                 b_codes.add(b_code)
                 
-                if len(a_codes.intersection(b_codes)) != 0:
+                if b_code in a_codes:
                     is_separable = False
                     break
             if is_separable == True:
