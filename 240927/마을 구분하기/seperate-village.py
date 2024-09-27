@@ -2,7 +2,7 @@ n = int(input())
 
 grid = [list(map(int, input().split())) for _ in range(n)]
 visited = [[False] * n for _ in range(n)]
-dxs = [0, 1, 0 -1]
+dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
 
 def dfs(x,y):
