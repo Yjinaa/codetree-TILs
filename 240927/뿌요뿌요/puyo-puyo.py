@@ -23,12 +23,10 @@ for i in range(n):
         if not visited[i][j]:
             visited[i][j] = True
             blocks = dfs(i,j)
+            total_block_nums.append(blocks)
             if blocks >= 4:
                 block_region += 1
-                total_block_nums.append(blocks)
             else:
                 continue
-if len(total_block_nums) == 0:
-    print(block_region, 0)
-else:
-    print(block_region, max(total_block_nums))
+
+print(block_region, max(total_block_nums))
