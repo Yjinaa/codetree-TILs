@@ -2,7 +2,7 @@
 n, m = map(int, input().split())
 
 grid = [list(map(int, input().split())) for _ in range(n)]
-k = 0
+k = 1
 max_regions = 0
 max_k = 0
 
@@ -20,7 +20,6 @@ def dfs(x,y):
 while True:
     grid2 = [[0]*m for _ in range(n)]
     visited = [[False] * m for _ in range(n)]
-    k += 1
     flooded = 0
     for i in range(n):
         for j in range(m):
@@ -39,5 +38,6 @@ while True:
     if regions > max_regions:
         max_k = k 
         max_regions = regions
+    k += 1
 
 print(max_k, max_regions)
