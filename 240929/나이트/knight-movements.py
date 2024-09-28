@@ -25,4 +25,7 @@ r1, c1, r2, c2  = r1-1, c1-1, r2-1, c2-1
 
 queue = deque([(r1,c1)])
 bfs()
-print(grid[r2][c2])
+if visited[n-1][n-1] != 0:
+    print(grid[r2][c2])
+else:
+    print(-1)
