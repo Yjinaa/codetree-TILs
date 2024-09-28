@@ -24,6 +24,7 @@ r1, c1, r2, c2  = r1-1, c1-1, r2-1, c2-1
 
 
 queue = deque([(r1,c1)])
+visited[r1][c1] = True
 bfs()
 if visited[r2][c2] == True:
     print(grid[r2][c2])
