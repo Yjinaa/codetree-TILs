@@ -12,7 +12,7 @@ def bfs():
         x, y = queue.popleft()
         for dx, dy in zip(dxs, dys):
             nx, ny = x + dx, y + dy
-            if 0 <= nx < n and 0 <= ny < n and visited[nx][ny] != True and grid[nx][ny] == 1:
+            if 0 <= nx < n and 0 <= ny < m and visited[nx][ny] != True and grid[nx][ny] == 1:
                 queue.append((nx, ny))
                 visited[nx][ny] = True
                 grid[nx][ny] = grid[x][y] + 1
