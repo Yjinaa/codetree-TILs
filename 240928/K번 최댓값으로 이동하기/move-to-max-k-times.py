@@ -22,7 +22,7 @@ def bfs(x,y):
                 if (max_val, -max_x, -max_y) < (grid[nx][ny], -nx, -ny):
                     max_val, max_x, max_y = grid[nx][ny], nx, ny
                 visited[nx][ny] = True
-    if max_x != -1:
+    if max_x != -1 and max_y != -1:
         return max_x, max_y
     else:
         return x,y
