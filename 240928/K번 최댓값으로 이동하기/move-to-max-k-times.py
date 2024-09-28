@@ -7,7 +7,7 @@ dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
 
 def bfs(x,y):
-    max_val = 0
+    max_val = -1
     max_x = -1
     max_y = -1
     standard = grid[x][y]
