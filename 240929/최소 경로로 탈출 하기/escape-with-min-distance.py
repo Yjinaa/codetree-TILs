@@ -6,7 +6,7 @@ visited = [[False]*m for _ in range(n)]
 
 dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
-
+escaped = False
 def bfs():
     while queue:
         x, y = queue.popleft()
@@ -16,8 +16,14 @@ def bfs():
                 queue.append((nx, ny))
                 visited[nx][ny] = True
                 grid[nx][ny] = grid[x][y] + 1
+    if nx == n and ny == m:
+        escaped = True
+    
 
 grid[0][0] = 0
 queue = deque([(0,0)])
 bfs()
-print(grid[n-1][m-1])
+if escaped == True:
+    print(grid[n-1][m-1])
+else:
+    print(-1)
