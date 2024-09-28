@@ -16,14 +16,12 @@ def bfs():
                 queue.append((nx, ny))
                 visited[nx][ny] = True
                 grid[nx][ny] = grid[x][y] + 1
-    if nx == n and ny == m:
-        escaped = True
-    
+
 
 grid[0][0] = 0
 queue = deque([(0,0)])
 bfs()
-if escaped == True:
+if visited[n-1][m-1] == True:
     print(grid[n-1][m-1])
 else:
     print(-1)
