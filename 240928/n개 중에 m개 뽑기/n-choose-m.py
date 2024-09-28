@@ -7,4 +7,4 @@ for com in combs:
     if len(num_list) == 1:
         print(1)
     else:
-        print(com[0], com[1])
+        print(*com)
