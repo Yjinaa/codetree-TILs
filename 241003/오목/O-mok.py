@@ -27,5 +27,7 @@ for i in range(19):
                             found = True
                             print(grid[i][j])
                             print(((i+x) // 2 + 1), (j+y) // 2 + 1)
-                            # print(x+1,y-2+1)
                             break
+    if found == False:
+        print(0)
+        break
