@@ -18,12 +18,13 @@ for i in range(n-2):
             for l in range(max_len):
                 if int(n1[l]) + int(n2[l]) + int(n3[l]) < 10:
                     answer += str(int(n1[l]) + int(n2[l]) + int(n3[l]))
-                    at_least = True
                     continue
                 else:
                     break
-            if int(answer) > max_val:
-                max_val = int(answer)
+            if len(str(int(answer))) == max_len:
+                at_least = True
+                if int(answer) > max_val:
+                    max_val = int(answer)
 
 if at_least == False:
     print(-1)
