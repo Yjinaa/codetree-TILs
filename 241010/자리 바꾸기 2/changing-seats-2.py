@@ -12,8 +12,8 @@ for i in range(n):
 for i in range(3):
     for seat in ks:
         ns[seat[0]], ns[seat[1]] = ns[seat[1]], ns[seat[0]]
-        d[ns[seat[0]]].add(seat[1])
-        d[ns[seat[1]]].add(seat[0])
+        d[ns[seat[0]]].add(seat[0])
+        d[ns[seat[1]]].add(seat[1])
 
 for key in d:
     print(len(d[key]))
