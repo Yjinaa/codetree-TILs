@@ -1,7 +1,7 @@
 n, m = map(int, input().split())
 
 js = [list(map(int, input().split())) for _ in range(n)]
-js = sorted([[w,v,round(v/w,3)] for w,v in js], key=lambda x:x[2], reverse=True)
+js = sorted([[w,v,v/w] for w,v in js], key=lambda x:x[2], reverse=True)
 
 v = 0
 for j in js:
