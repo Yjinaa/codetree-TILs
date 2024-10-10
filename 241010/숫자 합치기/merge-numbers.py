@@ -5,9 +5,9 @@ tv = 0
 cur_sum = []
 
 while len(ns) >= 2:
-    v = ns.pop(0) + ns.pop(0)
+    min1, min2 = ns.pop(ns.index(min(ns))), ns.pop(ns.index(min(ns)))
+    v = min1 + min2
     ns.insert(0,v)
     tv += v
-    ns.sort()
 
 print(tv)
