@@ -5,19 +5,16 @@ nums = set(ns)
 
 max_length = 0
 for num in nums:
-    start_idx = 0
-    skip = 0
-    for end_idx in range(1,n):
-        if ns[0] == num:
-            start_idx = 1
+    cur_length = 0
+    prev_num = None
+    for nb in ns:
+        if nb == num:
             continue
-        if ns[end_idx] == num:
-            skip += 1
-            continue
-        if ns[start_idx] != ns[end_idx]:
-            cur_length = end_idx - start_idx - skip
-            start_idx = end_idx
-            skip = 0
+        if prev_num != nb:
             max_length = max(cur_length, max_length)
-        
+            cur_length = 1
+        else:
+            cur_length += 1
+        prev_num = nb
+max_length = max(max_length, cur_length)
 print(max_length)
