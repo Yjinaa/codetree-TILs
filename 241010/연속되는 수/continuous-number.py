@@ -16,5 +16,5 @@ for num in nums:
         else:
             cur_length += 1
         prev_num = nb
-max_length = max(max_length, cur_length)
+    max_length = max(max_length, cur_length)
 print(max_length)
