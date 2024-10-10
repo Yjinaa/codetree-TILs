@@ -9,8 +9,7 @@ cur_sum = []
 while len(ns) >= 2:
     min1, min2 = heapq.heappop(ns), heapq.heappop(ns)
     v = min1 + min2
-    ns.append(v)
-    heapq.heapify(ns)
+    heapq.heappush(ns, v)
     tv += v
 
 print(tv)
