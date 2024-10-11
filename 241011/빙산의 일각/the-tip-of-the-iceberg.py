@@ -1,26 +1,44 @@
+# n 입력
 n = int(input())
-gs = list(int(input()) for _ in range(n))
+# ice_berg
+ice_berg = list()
+# h(i) 입력
+for _ in range(n):
+    ice_berg.append(int(input()))
 
-h = max(gs)
+# 함수들
+# simulate(curr_height)
+def simulate(curr_height):
+    
+    # curr_cnt
+    curr_cnt = 0
 
-max_chunks = 0
-max_h = 0
-for h in range(h-1,0,-1): # 잠기면 양수 안잠기면 음수
-    after = [h-g for g in gs]
-    prev_g = None
-    cur_chunks = 0
-    pointer = 0
-    while pointer < n:
-        if (prev_g == 0 or prev_g == None) and after[pointer] < 0:
-            cur_chunks += 1
-        if after[pointer] < 0:
-            prev_g = 1
-            pointer += 1
-        else:
-            prev_g = 0
-            pointer += 1
-    if cur_chunks > max_chunks:
-        max_chunks = cur_chunks
-        fin_h = h
+    # 맨 왼쪽은 떠있으면
+    if ice_berg[0] > curr_height:
+        # curr_cnt에 추가
+        curr_cnt += 1
 
-print(max_chunks)
+    # 이후의 ice_berg를 돌면서
+    for i in range(1, n):
+        # 전 인덱스가 잠겼고, 자기는 떠있으면
+        if ice_berg[i-1] <= curr_height and ice_berg[i] > curr_height:
+            # curr_cnt에 추가
+            curr_cnt += 1    
+
+    # curr_cnt 반환
+    return curr_cnt
+
+# 설계
+# max_cnt
+max_cnt = 0
+
+# max_height
+max_height = max(ice_berg)
+
+# 완전 탐색 시작
+for i in range(max_height):
+    # max_cnt 업데이트
+    max_cnt = max(max_cnt, simulate(i))
+
+# 출력
+print(max_cnt)
