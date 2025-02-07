@@ -2,4 +2,4 @@ import math
 
 n = int(input())
 
-print(int(math.sqrt(n)))
+print(int(math.log2(n)))
