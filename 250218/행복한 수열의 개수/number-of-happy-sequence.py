@@ -37,9 +37,11 @@ def get_happies(grid,m):
     for row in grid:
         if check_happy(row,m):
             happies += 1
-    for col in range(len(grid[0])):
-        column = [grid[row][col] for row in range(len(grid))]
-        if check_happy(column, m):
+    seq = [0] * n
+    for col in range(n):
+        for row in range(n):
+            seq[row] = grid[row][col]
+        if check_happy(seq, m):
             happies += 1
     return happies
 
