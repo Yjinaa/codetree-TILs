@@ -20,14 +20,15 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 # print(get_happies(grid))
 # 작업이 복잡할 땐 작은 작업 단위로 나눠보기
 def check_happy(nums, m):
-    cnt = 1
+    cnt, max_cnt = 1, 1
     for i in range(1, len(nums)):
         if nums[i] == nums[i-1]:
             cnt += 1
         else:
             cnt = 1
-        if cnt >= m:
-            return True
+        max_cnt = max(max_cnt, cnt)
+    if max_cnt >= m:
+        return True
 
 
 def get_happies(grid,m):
@@ -37,9 +38,8 @@ def get_happies(grid,m):
             happies += 1
     seq = [0] * n
     for col in range(n):
-        for row in range(n):
-            seq[row] = grid[row][col]
-        if check_happy(seq, m):
+        column = [grid[row][col] for row in range(len(grid))]
+        if check_happy(column, m):
             happies += 1
     return happies
 
