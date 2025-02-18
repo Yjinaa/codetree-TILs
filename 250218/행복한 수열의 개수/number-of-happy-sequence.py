@@ -21,7 +21,7 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 # print(get_happies(grid))
 # 작업이 복잡할 땐 작은 작업 단위로 나눠보기
 def check_happy(nums, m):
-    cnt = 0
+    cnt = 1
     for i in range(1, len(nums)):
         if nums[i] == nums[i-1]:
             cnt += 1
