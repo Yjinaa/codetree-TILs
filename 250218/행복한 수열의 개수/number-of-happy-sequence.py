@@ -34,11 +34,13 @@ def check_happy(nums, m):
 
 def get_happies(grid,m):
     happies = 0
-    for _ in range(2):
-        for row in grid:
-            if check_happy(row,m):
-                happies += 1
-        grid = list(map(list, zip(*grid)))
+    for row in grid:
+        if check_happy(row,m):
+            happies += 1
+    for col in range(len(grid[0])):
+        column = [grid[row][col] for row in range(len(grid))]
+        if check_happy(column, m):
+            happies += 1
     return happies
 
 print(get_happies(grid,m))
