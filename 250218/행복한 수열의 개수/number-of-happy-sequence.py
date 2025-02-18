@@ -27,10 +27,9 @@ def check_happy(nums, m):
             cnt += 1
         else:
             cnt = 1
-    if cnt >= m:
-        return True
-    else:
-        return False
+        if cnt >= m:
+            return True
+    return False
 
 
 def get_happies(grid,m):
