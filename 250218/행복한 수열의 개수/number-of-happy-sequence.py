@@ -1,4 +1,3 @@
-from collections import Counter
 n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)]
 
@@ -29,7 +28,6 @@ def check_happy(nums, m):
             cnt = 1
         if cnt >= m:
             return True
-    return False
 
 
 def get_happies(grid,m):
