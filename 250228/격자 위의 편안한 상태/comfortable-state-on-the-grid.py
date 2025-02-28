@@ -15,7 +15,7 @@ for _ in range(m):
         nr, nc = r + dx[i], c + dy[i]
         if 0 <= nr < n and 0 <= nc < n and grid[nr][nc]:
             colored += 1
-    if colored >= 3:
+    if colored == 3:
         print(1)
     else:
         print(0)
