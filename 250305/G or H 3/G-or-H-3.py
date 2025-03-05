@@ -3,7 +3,7 @@ x = []
 c = []
 for _ in range(n):
     pos, char = input().split()
-    x.append(int(pos))
+    x.append(int(pos))  # 10000개 어레이 생성할 필요 없이 pos 자체를 값으로 해서 리스트에 넣음
     c.append(char)
 
 # 카운팅 어레이
