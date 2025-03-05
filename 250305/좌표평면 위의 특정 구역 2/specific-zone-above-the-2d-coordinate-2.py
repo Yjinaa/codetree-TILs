@@ -55,4 +55,14 @@ for i in range(n): # 각 점을 제거하는 경우의 수 = n가지, i번 = 제
     area = (maxx-minx) * (maxy-miny)
     ans = min(ans, area)
 print(ans)
+
+# ====================================
+# 가장 pythonic한 방법
+# ====================================
+
+# def cal_area_without_i(i):
+#     minx = min(x[:i] + x[i+1:])
+#     miny = min(y[:1] + y[i+1:])
+#     maxx = max(x[:i] + x[i+1:])
+#     maxy = max(y[:1] + y[i+1:])
     
