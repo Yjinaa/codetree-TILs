@@ -65,4 +65,6 @@ print(ans)
 #     miny = min(y[:i] + y[i+1:])
 #     maxx = max(x[:i] + x[i+1:])
 #     maxy = max(y[:i] + y[i+1:])
+#     area = (maxx-minx) * (maxx-miny)
+#     return area
     
