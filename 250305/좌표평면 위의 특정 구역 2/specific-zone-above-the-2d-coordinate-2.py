@@ -62,7 +62,7 @@ print(ans)
 
 # def cal_area_without_i(i):
 #     minx = min(x[:i] + x[i+1:])
-#     miny = min(y[:1] + y[i+1:])
+#     miny = min(y[:i] + y[i+1:])
 #     maxx = max(x[:i] + x[i+1:])
-#     maxy = max(y[:1] + y[i+1:])
+#     maxy = max(y[:i] + y[i+1:])
     
