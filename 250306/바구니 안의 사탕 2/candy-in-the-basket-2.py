@@ -7,7 +7,10 @@ candy = [p[0] for p in candies]
 pos = [p[1] for p in candies]
 
 ans = 0
-for start in range(0, 200-(2*k)+1): # 모든 구간의 경우의 수
+if k >= 50:
+    print(sum(candy))
+    exit()
+for start in range(0, 100-(2*k)+1): # 모든 구간의 경우의 수
     end = start + 2*k
     cnt = 0
     for p in range(len(pos)):
