@@ -5,18 +5,16 @@ s2, e2 = map(int, input().split())
 
 # Please write your code here.
 
-blocks[s1-1:e1] = [0]*(e1-s1+1)
-temp = []
-for i in range(len(blocks)):
-    if blocks[i] != 0:
-        temp.append(blocks[i])
-blocks = temp
+s = [s1,s2]
+e = [e1,e2]
 
-blocks[s2-1:e2] = [0]*(e2-s2+1)
-temp = []
-for i in range(len(blocks)):
-    if blocks[i] != 0:
-        temp.append(blocks[i])
+for t in range(2):
+    blocks[s[t]-1:e[t]] = [0]*(e[t]-s[t]+1)
+    temp = []
+    for i in range(len(blocks)):
+        if blocks[i] != 0:
+            temp.append(blocks[i])
+    blocks = temp
 
 print(len(temp))
 for k in temp:
