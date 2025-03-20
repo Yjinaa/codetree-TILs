@@ -6,7 +6,6 @@ a = [list(map(int, input().split())) for _ in range(n)]
 # Get m marble positions
 marbles = [tuple(map(int, input().split())) for _ in range(m)]
 marbles = [(r-1,c-1) for r,c in marbles]
-loc = [[0 for _ in range(n)] for _ in range(n)]
 
 # Please write your code here.
 dx = [-1,1,0,0]
@@ -25,19 +24,21 @@ def get_marbles(loc):
 for k in range(t):
     loc = [[0 for _ in range(n)] for _ in range(n)]
     for i in range(len(marbles)):
+        max_num = 0
         r, c = marbles[i]
-        cur = a[r][c]
-        moved = False
+        # print(r,c,a[r][c])
         for j in range(4):
             nr, nc = r + dx[j], c + dy[j]
             if 0 <= nr < n and 0 <= nc < n:
-                if a[nr][nc] > cur:
+                if a[nr][nc] > max_num:
                     _r,_c = nr, nc
-                    cur = a[nr][nc]
-                    moved = True
-        if moved == True:
-            r,c = _r,_c
+                    max_num = a[nr][nc]
+                    # print(max_num)
+        r,c = _r,_c
         loc[r][c] += 1
+        # for p in loc:
+        #     print(*p)
+        # print()
     marbles = get_marbles(loc)
 
 print(len(marbles))
