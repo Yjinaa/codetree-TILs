@@ -17,6 +17,7 @@ while True:
                 ans.append(grid[nr][nc])
                 r, c = nr, nc
                 moved = True
+                break # 큰 곳 발견하면 바로 out
     if moved == False:
         break
 
