@@ -29,7 +29,7 @@ for _ in range(n):
     segments.append([left,right,color])
 
 for seg in segments:
-    l,r,color = seg[0] + 1000, seg[1] + 1000, seg[2]
+    l,r,color = seg[0] + 10000, seg[1] + 10000, seg[2]
     if color == 'w':
         for i in range(l,r+1):
             w[i] += 1
