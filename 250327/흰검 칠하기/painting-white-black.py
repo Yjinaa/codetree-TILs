@@ -5,9 +5,9 @@ n = int(input())
 # 흰색, 검은색, 현재 색 리스트를 따로 만들어 관리
 # 현재 색에서는 모두 -1로 초기화, 흰색이면 0 검은색이면 1로 칠하기
 
-w = [0] * 20010
-b = [0] * 20010
-c = [-1] * 20010
+w = [0] * 200010
+b = [0] * 200010
+c = [-1] * 200010
 
 segments = []
 
@@ -29,7 +29,7 @@ for _ in range(n):
     segments.append([left,right,color])
 
 for seg in segments:
-    l,r,color = seg[0] + 10000, seg[1] + 10000, seg[2]
+    l,r,color = seg[0] + 100000, seg[1] + 100000, seg[2]
     if color == 'w':
         for i in range(l,r+1):
             w[i] += 1
