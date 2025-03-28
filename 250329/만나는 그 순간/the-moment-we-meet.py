@@ -6,7 +6,7 @@ a = [0] * 1000000
 b = [0] * 1000000
 al = 0
 bl = 0
-t = 0
+t1 = 0
 
 for i in range(n):
     direction, sec = q[i]
@@ -16,10 +16,10 @@ for i in range(n):
             al -= 1
         else:
             al += 1
-        t += 1
-        a[t] = al
+        t1 += 1
+        a[t1] = al
 
-t = 0
+t2 = 0
 for i in range(n,len(q)):
     direction, sec = q[i]
     sec = int(sec)
@@ -28,10 +28,10 @@ for i in range(n,len(q)):
             bl -= 1
         else:
             bl += 1
-        t += 1
-        b[t] = bl
+        t2 += 1
+        b[t2] = bl
 
-for i in range(1, len(a)):
+for i in range(1, max(t1,t2)+1):
     if a[i] == b[i]:
         print(i)
         exit()
