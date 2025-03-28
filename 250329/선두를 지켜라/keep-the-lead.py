@@ -3,8 +3,8 @@ q = [list(map(int, input().split())) for _ in range(n+m)]
 
 # Please write your code here.
 
-a = [0] * 100001
-b = [0] * 100001
+a = [0] * 1000001
+b = [0] * 1000001
 
 t1 = 1
 for i in range(n):
