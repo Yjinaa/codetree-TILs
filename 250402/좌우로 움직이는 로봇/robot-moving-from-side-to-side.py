@@ -20,7 +20,7 @@ for i in range(n, n+m):
 
 if t1 > t2:
     for i in range(t2,t1):
-        b[i] = b[-1]
+        b[i] = b[i-1]
 else:
     for i in range(t1,t2):
         a[i] = a[i-1]
