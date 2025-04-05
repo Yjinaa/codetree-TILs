@@ -5,8 +5,9 @@ arr = list(map(int, input().split()))
 
 cnt = 0
 for i in range(n):
-    for j in range(i+1, n):
-        if int(sum(arr[i:j+1])/len(arr[i:j+1])) in arr[i:j+1]:
-            cnt += 1
+    for j in range(i, n):
+        if sum(arr[i:j+1])/len(arr[i:j+1]) in arr[i:j+1]:
+                cnt += 1
+                # print(arr[i:j+1])
 
 print(cnt)
